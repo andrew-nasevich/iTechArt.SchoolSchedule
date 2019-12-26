@@ -1,0 +1,6 @@
+[submodule "src/iTechArt.Repositories"]
+	path = src/iTechArt.Repositories
+	url = https://github.com/andrew-nasevich/iTechArt.Repositories
+[submodule "src/iTechArt.Common"]
+	path = src/iTechArt.Common
+	url = https://github.com/andrew-nasevich/iTechArt.Common
