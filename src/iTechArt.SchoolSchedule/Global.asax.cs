@@ -8,21 +8,13 @@ using Unity.Lifetime;
 namespace iTechArt.SchoolSchedule
 {
     public class MvcApplication : HttpApplication
-    {
-        private static readonly IUnityContainer _unityContainer = new UnityContainer();
-
-
+    { 
         protected void Application_Start()
         {
-            FillContainer();
+            UnityConfig.RegisterComponents();
 
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-        }
-
-        private static void FillContainer()
-        {
-            _unityContainer.RegisterType<ILogger, Logger>(new ContainerControlledLifetimeManager());
         }
     }
 }
