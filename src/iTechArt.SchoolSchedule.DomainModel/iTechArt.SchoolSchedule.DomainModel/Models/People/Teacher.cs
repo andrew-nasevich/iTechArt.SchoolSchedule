@@ -5,6 +5,6 @@ namespace iTechArt.SchoolSchedule.DomainModel.Models.People
 {
     public class Teacher : Person
     {
-        public ICollection<Lesson> Schedule { get; set; }
+        public ICollection<Lesson> Lessons { get; set; }
     }
 }
