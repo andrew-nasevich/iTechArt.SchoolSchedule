@@ -29,7 +29,7 @@ namespace iTechArt.SchoolSchedule.DomainModel.Models.Lessons
 
         public Group Group { get; set; }
 
-        public int HomeWorkId { get; set; }
+        public int? HomeWorkId { get; set; }
 
         public HomeWork HomeWork { get; set; }
     }
