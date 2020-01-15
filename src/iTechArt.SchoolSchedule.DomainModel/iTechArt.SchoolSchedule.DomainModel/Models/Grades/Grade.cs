@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using iTechArt.SchoolSchedule.DomainModel.Models.Lessons;
 using iTechArt.SchoolSchedule.DomainModel.Models.People;
-using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace iTechArt.SchoolSchedule.DomainModel.Models.Grades
 {
@@ -15,5 +15,7 @@ namespace iTechArt.SchoolSchedule.DomainModel.Models.Grades
         public IEnumerable<Pupil> Pupils { get; set; } 
 
         public IEnumerable<Group> Groups { get; set; }
+
+        public ICollection<Lesson> Lessons { get; set; }
     }
 }
