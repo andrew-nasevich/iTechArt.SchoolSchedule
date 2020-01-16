@@ -137,24 +137,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\iTechArt.Common\iTechArt.Common\iTechArt.Common.csproj">
-      <Project>{34158c53-3f1a-49f2-aba5-8a67889a1481}</Project>
-      <Name>iTechArt.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\iTechArt.Repositories\iTechArt.Repositories\iTechArt.Repositories.csproj">
-      <Project>{ef6fa8f4-97d7-4d4e-9771-91fa40ce865b}</Project>
-      <Name>iTechArt.Repositories</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\iTechArt.SchoolSchedule.DomainModel\iTechArt.SchoolSchedule.DomainModel\iTechArt.SchoolSchedule.DomainModel.csproj">
-      <Project>{05E833CB-5125-4223-B1A5-AD5672BEB86D}</Project>
-      <Name>iTechArt.SchoolSchedule.DomainModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\iTechArt.SchoolSchedule.Repositories\iTechArt.SchoolSchedule.Repositories\iTechArt.SchoolSchedule.Repositories.csproj">
-      <Project>{cfec3809-e667-477f-a333-7e98a5df7e10}</Project>
-      <Name>iTechArt.SchoolSchedule.Repositories</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

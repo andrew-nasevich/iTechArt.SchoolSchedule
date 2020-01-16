@@ -34,7 +34,7 @@ namespace iTechArt.SchoolSchedule.Repositories.UnitsOfWork
         {
             if (_repositoriesMapping.TryGetValue(typeof(T), out var repositoryType))
             {
-                return (IRepository<T>)Activator.CreateInstance(repositoryType, _dbContext);
+                return (IRepository<T>)Activator.CreateInstance(repositoryType, Context);
             }
 
             return base.CreateRepository<T>();
