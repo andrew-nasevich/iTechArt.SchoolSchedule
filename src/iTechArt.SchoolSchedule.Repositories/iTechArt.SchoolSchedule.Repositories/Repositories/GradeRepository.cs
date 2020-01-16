@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Linq;
-using iTechArt.Repositories.Repositories;
+using iTechArt.Repositories;
 using iTechArt.SchoolSchedule.DomainModel.Models.Grades;
 
 namespace iTechArt.SchoolSchedule.Repositories.Repositories
@@ -12,9 +12,10 @@ namespace iTechArt.SchoolSchedule.Repositories.Repositories
 
         }
 
-        public override IQueryable<Grade> GetFullEntities()
+
+        protected override IQueryable<Grade> GetAllQuery()
         {
-            return ExecuteIncludes(g => g.Pupils, g => g.Groups, g => g.Lessons);
+            return GetQuery(g => g.Pupils, g => g.Groups, g => g.Lessons);
         }
     }
 }

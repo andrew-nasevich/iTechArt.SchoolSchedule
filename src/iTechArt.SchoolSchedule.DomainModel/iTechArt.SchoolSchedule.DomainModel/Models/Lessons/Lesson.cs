@@ -13,7 +13,7 @@ namespace iTechArt.SchoolSchedule.DomainModel.Models.Lessons
 
         public DateTime DateTime { get; set; }
 
-        public int Teacherid { get; set; }
+        public int TeacherId { get; set; }
 
         public Teacher Teacher { get; set; }
 

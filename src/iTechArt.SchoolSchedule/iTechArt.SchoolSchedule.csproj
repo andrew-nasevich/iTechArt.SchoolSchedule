@@ -150,6 +150,10 @@
       <Project>{05E833CB-5125-4223-B1A5-AD5672BEB86D}</Project>
       <Name>iTechArt.SchoolSchedule.DomainModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\iTechArt.SchoolSchedule.Repositories\iTechArt.SchoolSchedule.Repositories\iTechArt.SchoolSchedule.Repositories.csproj">
+      <Project>{cfec3809-e667-477f-a333-7e98a5df7e10}</Project>
+      <Name>iTechArt.SchoolSchedule.Repositories</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

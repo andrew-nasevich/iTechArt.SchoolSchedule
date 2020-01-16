@@ -1,4 +1,8 @@
 ﻿using System.Web.Mvc;
+using iTechArt.SchoolSchedule.Repositories.UnitsOfWork;
+using iTechArt.SchoolSchedule.Repositories.DbContexts;
+using iTechArt.SchoolSchedule.DomainModel.Models.Lessons;
+using iTechArt.SchoolSchedule.DomainModel.Models.People;
 
 namespace iTechArt.SchoolSchedule.Controllers
 {
