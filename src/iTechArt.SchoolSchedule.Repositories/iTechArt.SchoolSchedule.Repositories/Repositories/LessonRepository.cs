@@ -7,7 +7,7 @@ namespace iTechArt.SchoolSchedule.Repositories.Repositories
 {
     public class LessonRepository : Repository<Lesson>
     {
-        public LessonRepository(DbContext dbContext) : base(dbContext)
+        public LessonRepository(DbContext context) : base(context)
         {
 
         }
