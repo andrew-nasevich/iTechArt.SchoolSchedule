@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using iTechArt.SchoolSchedule.DomainModel.Models.People;
+using iTechArt.SchoolSchedule.DomainModel.People;
 
 namespace iTechArt.SchoolSchedule.Repositories.Configurations
 {

@@ -1,9 +1,7 @@
-﻿namespace iTechArt.SchoolSchedule.DomainModel.Models.People
+﻿namespace iTechArt.SchoolSchedule.DomainModel.People
 {
-    public class Person
+    public class Person : Entity
     {
-        public int Id { get; set; }
-
         public string Surname { get; set; }
 
         public string Name { get; set; }

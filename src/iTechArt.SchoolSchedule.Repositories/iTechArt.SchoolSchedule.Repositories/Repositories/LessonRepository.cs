@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Linq;
 using iTechArt.Repositories;
-using iTechArt.SchoolSchedule.DomainModel.Models.Lessons;
+using iTechArt.SchoolSchedule.DomainModel.Lessons;
 
 namespace iTechArt.SchoolSchedule.Repositories.Repositories
 {
@@ -15,7 +15,7 @@ namespace iTechArt.SchoolSchedule.Repositories.Repositories
 
         protected override IQueryable<Lesson> GetAllQuery()
         {
-            return GetQuery(l => l.Teacher, l => l.Grade, l => l.Group, l => l.HomeWork);
+            return GetQuery(l => l.Teacher, l => l.Grade, l => l.Group, l => l.Homework);
         }
     }
 }

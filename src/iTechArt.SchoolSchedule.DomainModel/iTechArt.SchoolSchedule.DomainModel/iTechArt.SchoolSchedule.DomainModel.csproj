@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -39,14 +39,18 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Grades\Grade.cs" />
-    <Compile Include="Models\Grades\Group.cs" />
-    <Compile Include="Models\Lessons\HomeWork.cs" />
-    <Compile Include="Models\Lessons\Lesson.cs" />
-    <Compile Include="Models\People\Person.cs" />
-    <Compile Include="Models\People\Pupil.cs" />
-    <Compile Include="Models\People\Teacher.cs" />
-    <Compile Include="Models\Rooms\Classroom.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="Grades\Grade.cs" />
+    <Compile Include="Grades\Group.cs" />
+    <Compile Include="Grades\PupilGroup.cs" />
+    <Compile Include="Lessons\Course.cs" />
+    <Compile Include="Lessons\Homework.cs" />
+    <Compile Include="Lessons\Lesson.cs" />
+    <Compile Include="Lessons\LessonTime.cs" />
+    <Compile Include="People\Person.cs" />
+    <Compile Include="People\Pupil.cs" />
+    <Compile Include="People\Teacher.cs" />
+    <Compile Include="Rooms\Classroom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

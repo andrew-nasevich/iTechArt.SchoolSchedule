@@ -1,10 +1,12 @@
-﻿namespace iTechArt.SchoolSchedule.DomainModel.Models.Lessons
-{
-    public class HomeWork
-    {
-        public int Id { get; set; }
+﻿using System;
 
+namespace iTechArt.SchoolSchedule.DomainModel.Lessons
+{
+    public class Homework : Entity
+    {
         public string Description { get; set; }
+
+        public DateTime DateTime { get; set; }
 
         public int LessonId { get; set; }
         

@@ -1,19 +1,19 @@
 ﻿using System.Data.Entity;
 using System.Linq;
 using iTechArt.Repositories;
-using iTechArt.SchoolSchedule.DomainModel.Models.Lessons;
+using iTechArt.SchoolSchedule.DomainModel.Lessons;
 
 namespace iTechArt.SchoolSchedule.Repositories.Repositories
 {
-    public class HomeWorkRepository : Repository<HomeWork>
+    public class HomeworkRepository : Repository<Homework>
     {
-        public HomeWorkRepository(DbContext context) : base(context)
+        public HomeworkRepository(DbContext context) : base(context)
         {
 
         }
 
 
-        protected override IQueryable<HomeWork> GetAllQuery()
+        protected override IQueryable<Homework> GetAllQuery()
         {
             return GetQuery(h => h.Lesson);
         }

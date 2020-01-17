@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using iTechArt.SchoolSchedule.DomainModel.Models.Lessons;
+using iTechArt.SchoolSchedule.DomainModel.Lessons;
 
-namespace iTechArt.SchoolSchedule.DomainModel.Models.People
+namespace iTechArt.SchoolSchedule.DomainModel.People
 {
     public class Teacher : Person
     {

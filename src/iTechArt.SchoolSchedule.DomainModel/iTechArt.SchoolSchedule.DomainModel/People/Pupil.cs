@@ -1,6 +1,6 @@
-﻿using iTechArt.SchoolSchedule.DomainModel.Models.Grades;
+﻿using iTechArt.SchoolSchedule.DomainModel.Grades;
 
-namespace iTechArt.SchoolSchedule.DomainModel.Models.People
+namespace iTechArt.SchoolSchedule.DomainModel.People
 {
     public class Pupil : Person
     {

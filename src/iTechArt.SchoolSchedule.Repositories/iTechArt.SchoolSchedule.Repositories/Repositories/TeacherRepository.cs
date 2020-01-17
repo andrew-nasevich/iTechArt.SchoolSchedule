@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Linq;
 using iTechArt.Repositories;
-using iTechArt.SchoolSchedule.DomainModel.Models.People;
+using iTechArt.SchoolSchedule.DomainModel.People;
 
 namespace iTechArt.SchoolSchedule.Repositories.Repositories
 {

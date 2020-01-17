@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using iTechArt.Repositories.Interfaces;
 using iTechArt.Repositories;
-using iTechArt.SchoolSchedule.DomainModel.Models.Grades;
-using iTechArt.SchoolSchedule.DomainModel.Models.Lessons;
-using iTechArt.SchoolSchedule.DomainModel.Models.People;
+using iTechArt.SchoolSchedule.DomainModel.Grades;
+using iTechArt.SchoolSchedule.DomainModel.Lessons;
+using iTechArt.SchoolSchedule.DomainModel.People;
 using iTechArt.SchoolSchedule.Repositories.Repositories;
 
 namespace iTechArt.SchoolSchedule.Repositories.UnitsOfWork
@@ -21,7 +21,7 @@ namespace iTechArt.SchoolSchedule.Repositories.UnitsOfWork
             {
                 {typeof(Grade), typeof(GradeRepository) },
                 {typeof(Group), typeof(GroupRepository) },
-                {typeof(HomeWork), typeof(HomeWorkRepository) },
+                {typeof(Homework), typeof(HomeworkRepository) },
                 {typeof(Lesson), typeof(LessonRepository) },
                 {typeof(Pupil), typeof(PupilRepository) },
                 {typeof(Teacher), typeof(TeacherRepository) }
