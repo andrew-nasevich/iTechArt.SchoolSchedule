@@ -1,8 +1,7 @@
-﻿namespace iTechArt.SchoolSchedule.Repositories.Migrations
-{
-    using System;
-    using System.Data.Entity.Migrations;
-    
+﻿using System.Data.Entity.Migrations;
+
+namespace iTechArt.SchoolSchedule.Repositories.Migrations
+{   
     public partial class InitilCreate : DbMigration
     {
         public override void Up()

@@ -1,18 +1,17 @@
-﻿namespace iTechArt.SchoolSchedule.Repositories.Migrations
-{
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+﻿using System.Data.Entity.Migrations;
+using iTechArt.SchoolSchedule.Repositories.DbContexts;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<iTechArt.SchoolSchedule.Repositories.DbContexts.SchoolScheduleContext>
+namespace iTechArt.SchoolSchedule.Repositories.Migrations
+{
+    internal sealed class Configuration : DbMigrationsConfiguration<SchoolScheduleContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(iTechArt.SchoolSchedule.Repositories.DbContexts.SchoolScheduleContext context)
+
+        protected override void Seed(SchoolScheduleContext context)
         {
             //  This method will be called after migrating to the latest version.
 
