@@ -15,7 +15,14 @@ namespace iTechArt.SchoolSchedule.Repositories.Repositories
 
         protected override IQueryable<Lesson> GetAllQuery()
         {
-            return GetQuery(l => l.Teacher, l => l.Grade, l => l.Group, l => l.Homework);
+            return GetQuery(
+                l => l.Teacher,
+                l => l.Grade, 
+                l => l.Group, 
+                l => l.Homeworks, 
+                l => l.Classroom, 
+                l => l.LessonTime,
+                l => l.Course);
         }
     }
 }

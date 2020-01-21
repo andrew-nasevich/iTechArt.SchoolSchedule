@@ -8,8 +8,7 @@ namespace iTechArt.SchoolSchedule.Repositories.Configurations
         public GradeEntityConfiguration()
         {
             Property(g => g.Number).IsRequired();
-            Property(g => g.Letter).IsOptional().HasMaxLength(5);
-            HasIndex(g => new { g.Number, g.Letter }).IsUnique();
+            Property(g => g.Letter).IsOptional();
         }
     }
 }

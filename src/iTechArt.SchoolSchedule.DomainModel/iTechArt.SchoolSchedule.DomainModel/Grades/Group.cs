@@ -6,7 +6,11 @@ namespace iTechArt.SchoolSchedule.DomainModel.Grades
 {
     public class Group : Entity
     {
-        public string Category { get; set; }
+        public string Name { get; set; }
+
+        public int GradeId { get; set; }
+
+        public Grade Grade { get; set; }
 
         public ICollection<PupilGroup> PupilGroups { get; set; }
 

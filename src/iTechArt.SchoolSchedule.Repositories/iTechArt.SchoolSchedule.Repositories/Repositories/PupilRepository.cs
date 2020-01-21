@@ -15,7 +15,7 @@ namespace iTechArt.SchoolSchedule.Repositories.Repositories
 
         protected override IQueryable<Pupil> GetAllQuery()
         {
-            return GetQuery(p => p.Grade);
+            return GetQuery(p => p.Grade, p => p.PupilGroups);
         }
     }
 }

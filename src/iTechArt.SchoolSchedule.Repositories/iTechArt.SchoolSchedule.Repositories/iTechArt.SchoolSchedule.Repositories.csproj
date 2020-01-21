@@ -45,15 +45,29 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\ClassroomEntityConfiguration.cs" />
+    <Compile Include="Configurations\CourseEntityConfiguration.cs" />
     <Compile Include="Configurations\GradeEntityConfiguration.cs" />
+    <Compile Include="Configurations\GroupEntityConfiguration.cs" />
+    <Compile Include="Configurations\HomeworkEntityConfiguration.cs" />
     <Compile Include="Configurations\LessonEntityConfiguration.cs" />
+    <Compile Include="Configurations\LessonTimeEntityConfiguration.cs" />
     <Compile Include="Configurations\PersonEntityConfiguration.cs" />
+    <Compile Include="Configurations\PupilEntityConfiguration.cs" />
+    <Compile Include="Configurations\PupilGroupEntityConfiguration.cs" />
     <Compile Include="DbContexts\SchoolScheduleContext.cs" />
+    <Compile Include="Migrations\202001211253427_InitilCreate.cs" />
+    <Compile Include="Migrations\202001211253427_InitilCreate.designer.cs">
+      <DependentUpon>202001211253427_InitilCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ClassroomRepository.cs" />
     <Compile Include="Repositories\GradeRepository.cs" />
     <Compile Include="Repositories\GroupRepository.cs" />
     <Compile Include="Repositories\HomeworkRepository.cs" />
     <Compile Include="Repositories\LessonRepository.cs" />
+    <Compile Include="Repositories\PupilGroupRepository.cs" />
     <Compile Include="Repositories\PupilRepository.cs" />
     <Compile Include="Repositories\TeacherRepository.cs" />
     <Compile Include="SchoolScheduleUnitOfWork\SchoolScheduleUnitOfWork.cs" />
@@ -75,6 +89,11 @@
       <Project>{05e833cb-5125-4223-b1a5-ad5672beb86d}</Project>
       <Name>iTechArt.SchoolSchedule.DomainModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202001211253427_InitilCreate.resx">
+      <DependentUpon>202001211253427_InitilCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

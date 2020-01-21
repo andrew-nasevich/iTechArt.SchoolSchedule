@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace iTechArt.SchoolSchedule.DomainModel.Lessons
 {
@@ -7,5 +8,7 @@ namespace iTechArt.SchoolSchedule.DomainModel.Lessons
         public DayOfWeek DayOfWeek { get; set; }
 
         public int Order { get; set; }
+
+        public ICollection<Lesson> Lessons { get; set; }
     }
 }

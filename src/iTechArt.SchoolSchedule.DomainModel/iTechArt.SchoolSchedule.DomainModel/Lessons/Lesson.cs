@@ -31,6 +31,6 @@ namespace iTechArt.SchoolSchedule.DomainModel.Lessons
 
         public Group Group { get; set; }
 
-        public ICollection<Homework> Homework { get; set; }
+        public ICollection<Homework> Homeworks { get; set; }
     }
 }
