@@ -7,7 +7,7 @@ namespace iTechArt.SchoolSchedule.DomainModel.Lessons
     {
         public DayOfWeek DayOfWeek { get; set; }
 
-        public int Order { get; set; }
+        public LessonNumber Order { get; set; }
 
         public ICollection<Lesson> Lessons { get; set; }
     }

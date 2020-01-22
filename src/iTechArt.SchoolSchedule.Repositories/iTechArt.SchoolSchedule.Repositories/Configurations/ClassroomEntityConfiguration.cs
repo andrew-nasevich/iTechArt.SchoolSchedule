@@ -7,7 +7,8 @@ namespace iTechArt.SchoolSchedule.Repositories.Configurations
     {
         public ClassroomEntityConfiguration()
         {
-            Property(c => c.RoomNumber).IsRequired();
+            Property(c => c.RoomName).IsRequired();
+            HasIndex(c => c.RoomName).IsUnique();
         }
     }
 }

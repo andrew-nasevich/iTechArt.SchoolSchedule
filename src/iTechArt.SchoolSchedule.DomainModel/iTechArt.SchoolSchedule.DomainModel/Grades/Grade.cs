@@ -6,7 +6,7 @@ namespace iTechArt.SchoolSchedule.DomainModel.Grades
 {
     public class Grade : Entity
     {
-        public int Number { get; set; }
+        public GradeNumber Number { get; set; }
 
         public string Letter { get; set; }
 

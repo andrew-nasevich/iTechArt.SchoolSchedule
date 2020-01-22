@@ -45,6 +45,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\AddressEntityConfiguration.cs" />
     <Compile Include="Configurations\ClassroomEntityConfiguration.cs" />
     <Compile Include="Configurations\CourseEntityConfiguration.cs" />
     <Compile Include="Configurations\GradeEntityConfiguration.cs" />
@@ -62,19 +63,11 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\ClassroomRepository.cs" />
-    <Compile Include="Repositories\GradeRepository.cs" />
-    <Compile Include="Repositories\GroupRepository.cs" />
     <Compile Include="Repositories\HomeworkRepository.cs" />
     <Compile Include="Repositories\LessonRepository.cs" />
     <Compile Include="Repositories\PupilGroupRepository.cs" />
     <Compile Include="Repositories\PupilRepository.cs" />
-    <Compile Include="Repositories\TeacherRepository.cs" />
     <Compile Include="SchoolScheduleUnitOfWork\SchoolScheduleUnitOfWork.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\iTechArt.Common\iTechArt.Common\iTechArt.Common.csproj">

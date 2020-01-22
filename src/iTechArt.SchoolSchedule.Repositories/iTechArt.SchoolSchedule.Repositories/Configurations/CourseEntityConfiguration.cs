@@ -8,6 +8,7 @@ namespace iTechArt.SchoolSchedule.Repositories.Configurations
         public CourseEntityConfiguration()
         {
             Property(c => c.Name).IsRequired();
+            HasIndex(c => c.Name).IsUnique();
         }
     }
 }

@@ -9,6 +9,7 @@ namespace iTechArt.SchoolSchedule.Repositories.Configurations
         {
             Property(lt => lt.DayOfWeek).IsRequired();
             Property(lt => lt.Order).IsRequired();
+            HasIndex(lt => new { lt.DayOfWeek, lt.Order }).IsUnique();
         }
     }
 }

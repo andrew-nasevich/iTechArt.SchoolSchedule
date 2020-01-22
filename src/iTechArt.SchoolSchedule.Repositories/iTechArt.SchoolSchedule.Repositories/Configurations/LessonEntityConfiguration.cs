@@ -13,6 +13,7 @@ namespace iTechArt.SchoolSchedule.Repositories.Configurations
             HasRequired(l => l.Classroom).WithMany(c => c.Lessons).HasForeignKey(l => l.ClassroomId);
             HasRequired(l => l.LessonTime).WithMany(lt => lt.Lessons).HasForeignKey(l => l.LessonTimeId);
             HasRequired(l => l.Course).WithMany(c => c.Lessons).HasForeignKey(l => l.CourseId);
+            HasIndex(l => new { l.ClassroomId, l.LessonTimeId, l.TeacherId}).IsUnique();
         }
     }
 }

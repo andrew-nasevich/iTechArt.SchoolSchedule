@@ -2,7 +2,7 @@
 
 namespace iTechArt.SchoolSchedule.DomainModel.Grades
 {
-    public class PupilGroup : Entity
+    public class PupilGroup
     {
         public int PupilId { get; set; }
 

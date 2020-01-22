@@ -10,6 +10,7 @@ namespace iTechArt.SchoolSchedule.Repositories.Configurations
             Property(h => h.DateTime).IsRequired();
             Property(h => h.Description).IsRequired();
             HasRequired(h => h.Lesson).WithMany(l => l.Homeworks).HasForeignKey(h => h.LessonId);
+            HasIndex(h => new { h.DateTime, h.LessonId }).IsUnique();
         }
     }
 }

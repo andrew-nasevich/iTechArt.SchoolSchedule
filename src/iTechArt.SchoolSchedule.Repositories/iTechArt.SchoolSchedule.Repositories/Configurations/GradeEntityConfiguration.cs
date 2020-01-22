@@ -9,6 +9,7 @@ namespace iTechArt.SchoolSchedule.Repositories.Configurations
         {
             Property(g => g.Number).IsRequired();
             Property(g => g.Letter).IsOptional();
+            HasIndex(g => new { g.Number, g.Letter }).IsUnique();
         }
     }
 }

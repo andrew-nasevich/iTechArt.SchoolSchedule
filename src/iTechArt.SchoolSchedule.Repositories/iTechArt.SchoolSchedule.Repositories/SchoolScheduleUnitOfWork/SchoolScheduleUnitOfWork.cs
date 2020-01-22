@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using iTechArt.Repositories.Interfaces;
 using iTechArt.Repositories;
-using iTechArt.SchoolSchedule.DomainModel.Grades;
 using iTechArt.SchoolSchedule.DomainModel.Lessons;
 using iTechArt.SchoolSchedule.DomainModel.People;
 using iTechArt.SchoolSchedule.Repositories.Repositories;
@@ -14,19 +13,16 @@ namespace iTechArt.SchoolSchedule.Repositories.UnitsOfWork
     {
         private readonly IDictionary<Type, Type> _repositoriesMapping;
 
+
         public SchoolScheduleUnitOfWork(DbContext сontext)
             : base(сontext)
         {
             _repositoriesMapping = new Dictionary<Type, Type>()
             {
-                {typeof(Grade), typeof(GradeRepository) },
-                {typeof(Group), typeof(GroupRepository) },
-                {typeof(Homework), typeof(HomeworkRepository) },
-                {typeof(Lesson), typeof(LessonRepository) },
-                {typeof(Pupil), typeof(PupilRepository) },
-                {typeof(Teacher), typeof(TeacherRepository) }
+                { typeof(Homework), typeof(HomeworkRepository) },
+                { typeof(Lesson), typeof(LessonRepository) },
+                { typeof(Pupil), typeof(PupilRepository) }
             };
-
         }
 
 

@@ -7,7 +7,8 @@ namespace iTechArt.SchoolSchedule.Repositories.Repositories
 {
     public class HomeworkRepository : Repository<Homework>
     {
-        public HomeworkRepository(DbContext context) : base(context)
+        public HomeworkRepository(DbContext context) 
+            : base(context)
         {
 
         }

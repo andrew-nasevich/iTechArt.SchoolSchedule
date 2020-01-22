@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using iTechArt.SchoolSchedule.DomainModel.People;
 using iTechArt.SchoolSchedule.Repositories.Configurations;
 using iTechArt.SchoolSchedule.Repositories.Migrations;
 
@@ -6,7 +7,8 @@ namespace iTechArt.SchoolSchedule.Repositories.DbContexts
 {
     public class SchoolScheduleContext : DbContext
     {
-        public SchoolScheduleContext() : base()
+        public SchoolScheduleContext() 
+            : base()
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<SchoolScheduleContext, Configuration>());
         }
@@ -16,6 +18,7 @@ namespace iTechArt.SchoolSchedule.Repositories.DbContexts
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.ComplexType<Address>();
             modelBuilder.Configurations.Add(new GradeEntityConfiguration());
             modelBuilder.Configurations.Add(new LessonEntityConfiguration());
             modelBuilder.Configurations.Add(new PersonEntityConfiguration());

@@ -9,6 +9,7 @@ namespace iTechArt.SchoolSchedule.Repositories.Configurations
         {
             Property(g => g.Name).IsRequired();
             HasRequired(g => g.Grade).WithMany(g => g.Groups).HasForeignKey(g => g.GradeId);
+            HasIndex(g => new { g.Name, g.GradeId }).IsUnique();
         }
     }
 }

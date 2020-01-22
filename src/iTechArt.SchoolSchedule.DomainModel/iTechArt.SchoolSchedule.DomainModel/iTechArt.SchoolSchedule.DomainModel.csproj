@@ -41,12 +41,15 @@
   <ItemGroup>
     <Compile Include="Entity.cs" />
     <Compile Include="Grades\Grade.cs" />
+    <Compile Include="Grades\GradeNumber.cs" />
     <Compile Include="Grades\Group.cs" />
     <Compile Include="Grades\PupilGroup.cs" />
     <Compile Include="Lessons\Course.cs" />
     <Compile Include="Lessons\Homework.cs" />
     <Compile Include="Lessons\Lesson.cs" />
+    <Compile Include="Lessons\LessonNumber.cs" />
     <Compile Include="Lessons\LessonTime.cs" />
+    <Compile Include="People\Address.cs" />
     <Compile Include="People\Person.cs" />
     <Compile Include="People\Pupil.cs" />
     <Compile Include="People\Teacher.cs" />
@@ -55,7 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

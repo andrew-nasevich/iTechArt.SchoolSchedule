@@ -7,7 +7,8 @@ namespace iTechArt.SchoolSchedule.Repositories.Repositories
 {
     public class PupilRepository : Repository<Pupil>
     {
-        public PupilRepository(DbContext context) : base(context)
+        public PupilRepository(DbContext context) 
+            : base(context)
         {
 
         }
@@ -15,7 +16,7 @@ namespace iTechArt.SchoolSchedule.Repositories.Repositories
 
         protected override IQueryable<Pupil> GetAllQuery()
         {
-            return GetQuery(p => p.Grade, p => p.PupilGroups);
+            return GetQuery(p => p.Grade);
         }
     }
 }
