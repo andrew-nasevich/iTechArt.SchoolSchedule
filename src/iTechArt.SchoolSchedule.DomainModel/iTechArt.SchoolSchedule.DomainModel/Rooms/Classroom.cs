@@ -5,7 +5,7 @@ namespace iTechArt.SchoolSchedule.DomainModel.Rooms
 {
     public class Classroom : Entity
     {
-        public string RoomName { get; set; }
+        public string Name { get; set; }
 
         public ICollection<Lesson> Lessons { get; set; }
     }

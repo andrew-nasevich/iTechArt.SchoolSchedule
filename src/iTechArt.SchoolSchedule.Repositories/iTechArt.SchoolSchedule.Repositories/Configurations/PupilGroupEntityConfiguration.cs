@@ -8,8 +8,8 @@ namespace iTechArt.SchoolSchedule.Repositories.Configurations
         public PupilGroupEntityConfiguration()
         {
             HasKey(pg => new { pg.GroupId, pg.PupilId });
-            HasRequired(pg => pg.Pupil).WithMany(p => p.PupilGroups).HasForeignKey(pg => pg.PupilId);
-            HasRequired(pg => pg.Group).WithMany(g => g.PupilGroups).HasForeignKey(pg => pg.GroupId);
+            HasRequired(pg => pg.Pupil).WithMany(p => p.PupilGroups).HasForeignKey(pg => pg.PupilId).WillCascadeOnDelete(false);
+            HasRequired(pg => pg.Group).WithMany(g => g.PupilGroups).HasForeignKey(pg => pg.GroupId).WillCascadeOnDelete(false);
         }
     }
 }

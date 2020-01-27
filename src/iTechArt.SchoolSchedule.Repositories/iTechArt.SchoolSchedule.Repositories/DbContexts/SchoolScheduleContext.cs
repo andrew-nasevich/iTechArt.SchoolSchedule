@@ -8,7 +8,6 @@ namespace iTechArt.SchoolSchedule.Repositories.DbContexts
     public class SchoolScheduleContext : DbContext
     {
         public SchoolScheduleContext() 
-            : base()
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<SchoolScheduleContext, Configuration>());
         }

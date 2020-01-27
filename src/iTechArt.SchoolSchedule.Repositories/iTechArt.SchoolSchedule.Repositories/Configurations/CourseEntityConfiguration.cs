@@ -7,7 +7,7 @@ namespace iTechArt.SchoolSchedule.Repositories.Configurations
     {
         public CourseEntityConfiguration()
         {
-            Property(c => c.Name).IsRequired();
+            Property(c => c.Name).IsRequired().HasMaxLength(50);
             HasIndex(c => c.Name).IsUnique();
         }
     }
