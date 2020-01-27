@@ -7,6 +7,7 @@ namespace iTechArt.SchoolSchedule.Repositories.Configurations
     {
         public PupilEntityConfiguration()
         {
+            ToTable("Pupils");
             HasRequired(p => p.Grade).WithMany(g => g.Pupils).HasForeignKey(p => p.GradeId).WillCascadeOnDelete(false);
         }
     }

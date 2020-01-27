@@ -7,13 +7,13 @@ namespace iTechArt.SchoolSchedule.Repositories.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class InitilCreate : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitilCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202001211253427_InitilCreate"; }
+            get { return "202001271136322_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source
