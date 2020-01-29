@@ -9,12 +9,13 @@ using iTechArt.SchoolSchedule.Repositories.Repositories;
 
 namespace iTechArt.SchoolSchedule.Repositories.SchoolScheduleUnitOfWork
 {
-    public class SchoolScheduleUnitOfWork : UnitOfWork
+    public class SchoolScheduleUnitOfWork<TContext> : UnitOfWork<TContext> 
+        where TContext : DbContext
     {
         private readonly IDictionary<Type, Type> _repositoriesMapping;
 
 
-        public SchoolScheduleUnitOfWork(DbContext context)
+        public SchoolScheduleUnitOfWork(TContext context)
             : base(context)
         {
             _repositoriesMapping = new Dictionary<Type, Type>()

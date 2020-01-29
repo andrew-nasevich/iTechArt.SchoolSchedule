@@ -10,8 +10,8 @@ namespace iTechArt.SchoolSchedule.Repositories.Configurations
             Property(p => p.Name).IsRequired().HasMaxLength(50);
             Property(p => p.Surname).IsRequired().HasMaxLength(50);
             Property(p => p.Patronymic).IsRequired().HasMaxLength(50);
-            Property(p => p.Address.Street).IsRequired().HasMaxLength(50);
-            Property(p => p.Address.HouseNumber).IsRequired().HasMaxLength(10);
+            Property(p => p.Address.Street).HasColumnName("Street").IsRequired().HasMaxLength(50);
+            Property(p => p.Address.HouseNumber).HasColumnName("HouseNumber").IsRequired().HasMaxLength(10);
         }
     }
 }

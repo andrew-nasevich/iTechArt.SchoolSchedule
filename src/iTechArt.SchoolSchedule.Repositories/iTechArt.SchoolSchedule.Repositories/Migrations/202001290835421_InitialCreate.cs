@@ -14,8 +14,8 @@ namespace iTechArt.SchoolSchedule.Repositories.Migrations
                         Surname = c.String(nullable: false, maxLength: 50),
                         Name = c.String(nullable: false, maxLength: 50),
                         Patronymic = c.String(nullable: false, maxLength: 50),
-                        Address_Street = c.String(nullable: false, maxLength: 50),
-                        Address_HouseNumber = c.String(nullable: false, maxLength: 10),
+                        Street = c.String(nullable: false, maxLength: 50),
+                        HouseNumber = c.String(nullable: false, maxLength: 10),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -32,11 +32,11 @@ namespace iTechArt.SchoolSchedule.Repositories.Migrations
                         GroupId = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Classrooms", t => t.ClassroomId)
-                .ForeignKey("dbo.Courses", t => t.CourseId)
-                .ForeignKey("dbo.Grades", t => t.GradeId)
+                .ForeignKey("dbo.Classrooms", t => t.ClassroomId, cascadeDelete: true)
+                .ForeignKey("dbo.Courses", t => t.CourseId, cascadeDelete: true)
+                .ForeignKey("dbo.Grades", t => t.GradeId, cascadeDelete: true)
                 .ForeignKey("dbo.Groups", t => t.GroupId)
-                .ForeignKey("dbo.LessonTimes", t => t.LessonTimeId)
+                .ForeignKey("dbo.LessonTimes", t => t.LessonTimeId, cascadeDelete: true)
                 .ForeignKey("dbo.Teachers", t => t.TeacherId)
                 .Index(t => t.CourseId)
                 .Index(t => new { t.ClassroomId, t.LessonTimeId, t.TeacherId }, unique: true)
@@ -83,7 +83,7 @@ namespace iTechArt.SchoolSchedule.Repositories.Migrations
                         GradeId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Grades", t => t.GradeId, cascadeDelete: true)
+                .ForeignKey("dbo.Grades", t => t.GradeId)
                 .Index(t => new { t.Name, t.GradeId }, unique: true);
             
             CreateTable(
@@ -94,7 +94,7 @@ namespace iTechArt.SchoolSchedule.Repositories.Migrations
                         PupilId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => new { t.GroupId, t.PupilId })
-                .ForeignKey("dbo.Groups", t => t.GroupId)
+                .ForeignKey("dbo.Groups", t => t.GroupId, cascadeDelete: true)
                 .ForeignKey("dbo.Pupils", t => t.PupilId)
                 .Index(t => t.GroupId)
                 .Index(t => t.PupilId);
@@ -142,7 +142,7 @@ namespace iTechArt.SchoolSchedule.Repositories.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.People", t => t.Id)
-                .ForeignKey("dbo.Grades", t => t.GradeId)
+                .ForeignKey("dbo.Grades", t => t.GradeId, cascadeDelete: true)
                 .Index(t => t.Id)
                 .Index(t => t.GradeId);
             
