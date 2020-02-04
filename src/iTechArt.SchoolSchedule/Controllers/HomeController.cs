@@ -7,6 +7,7 @@ namespace iTechArt.SchoolSchedule.Controllers
         // GET: Home
         public string Index()
         {
+            
             return "Hello, World!";
         }
     }

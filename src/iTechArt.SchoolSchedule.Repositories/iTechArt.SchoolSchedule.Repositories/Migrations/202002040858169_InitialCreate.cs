@@ -1,7 +1,8 @@
-﻿using System.Data.Entity.Migrations;
-
-namespace iTechArt.SchoolSchedule.Repositories.Migrations
+﻿namespace iTechArt.SchoolSchedule.Repositories.Migrations
 {
+    using System;
+    using System.Data.Entity.Migrations;
+    
     public partial class InitialCreate : DbMigration
     {
         public override void Up()
@@ -83,7 +84,7 @@ namespace iTechArt.SchoolSchedule.Repositories.Migrations
                         GradeId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Grades", t => t.GradeId)
+                .ForeignKey("dbo.Grades", t => t.GradeId, cascadeDelete: true)
                 .Index(t => new { t.Name, t.GradeId }, unique: true);
             
             CreateTable(

@@ -8,7 +8,7 @@ namespace iTechArt.SchoolSchedule.Repositories.Configurations
         public GroupEntityConfiguration()
         {
             Property(g => g.Name).IsRequired().HasMaxLength(50);
-            HasRequired(g => g.Grade).WithMany(g => g.Groups).HasForeignKey(g => g.GradeId).WillCascadeOnDelete(false);
+            HasRequired(g => g.Grade).WithMany(g => g.Groups).HasForeignKey(g => g.GradeId);
             HasIndex(g => new { g.Name, g.GradeId }).IsUnique();
         }
     }

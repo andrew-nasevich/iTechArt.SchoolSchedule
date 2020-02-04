@@ -1,5 +1,4 @@
 ﻿using System.Data.Entity;
-using iTechArt.SchoolSchedule.DomainModel.People;
 using iTechArt.SchoolSchedule.Repositories.Configurations;
 using iTechArt.SchoolSchedule.Repositories.Migrations;
 
@@ -17,7 +16,6 @@ namespace iTechArt.SchoolSchedule.Repositories.DbContexts
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.ComplexType<Address>();
             modelBuilder.Configurations.Add(new TeacherEntityConfiguration());
             modelBuilder.Configurations.Add(new GradeEntityConfiguration());
             modelBuilder.Configurations.Add(new LessonEntityConfiguration());
