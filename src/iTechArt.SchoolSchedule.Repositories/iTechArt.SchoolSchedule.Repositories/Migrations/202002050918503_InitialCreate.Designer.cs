@@ -13,7 +13,7 @@ namespace iTechArt.SchoolSchedule.Repositories.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202002040858169_InitialCreate"; }
+            get { return "202002050918503_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

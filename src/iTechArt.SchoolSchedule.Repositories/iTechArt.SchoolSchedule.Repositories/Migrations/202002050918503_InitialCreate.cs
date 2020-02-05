@@ -95,7 +95,7 @@
                         PupilId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => new { t.GroupId, t.PupilId })
-                .ForeignKey("dbo.Groups", t => t.GroupId, cascadeDelete: true)
+                .ForeignKey("dbo.Groups", t => t.GroupId)
                 .ForeignKey("dbo.Pupils", t => t.PupilId)
                 .Index(t => t.GroupId)
                 .Index(t => t.PupilId);

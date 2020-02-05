@@ -57,9 +57,9 @@
     <Compile Include="Configurations\PupilGroupEntityConfiguration.cs" />
     <Compile Include="Configurations\TeacherEntityConfiguration.cs" />
     <Compile Include="DbContexts\SchoolScheduleContext.cs" />
-    <Compile Include="Migrations\202002040858169_InitialCreate.cs" />
-    <Compile Include="Migrations\202002040858169_InitialCreate.designer.cs">
-      <DependentUpon>202002040858169_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202002050918503_InitialCreate.cs" />
+    <Compile Include="Migrations\202002050918503_InitialCreate.designer.cs">
+      <DependentUpon>202002050918503_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,8 +84,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002040858169_InitialCreate.resx">
-      <DependentUpon>202002040858169_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002050918503_InitialCreate.resx">
+      <DependentUpon>202002050918503_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
