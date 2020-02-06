@@ -18,7 +18,9 @@ namespace iTechArt.SchoolSchedule.Foundation.SchoolScheduleInitializationService
         private readonly ISchoolScheduleContextFactory _schoolScheduleContextFactory;
 
 
-        public SchoolScheduleInitializationService(ISchoolScheduleUnitOfWorkFactory schoolScheduleUnitOfWorkFactory, ISchoolScheduleContextFactory schoolScheduleContextFactory)
+        public SchoolScheduleInitializationService(
+            ISchoolScheduleUnitOfWorkFactory schoolScheduleUnitOfWorkFactory, 
+            ISchoolScheduleContextFactory schoolScheduleContextFactory)
         {
             _schoolScheduleUnitOfWorkFactory = schoolScheduleUnitOfWorkFactory;
             _schoolScheduleContextFactory = schoolScheduleContextFactory;
