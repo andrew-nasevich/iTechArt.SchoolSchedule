@@ -150,6 +150,10 @@
       <Project>{05E833CB-5125-4223-B1A5-AD5672BEB86D}</Project>
       <Name>iTechArt.SchoolSchedule.DomainModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\iTechArt.SchoolSchedule.Foundation\iTechArt.SchoolSchedule.Foundation\iTechArt.SchoolSchedule.Foundation.csproj">
+      <Project>{74FC8B3D-9E02-4271-B6CF-D06B1A450B1A}</Project>
+      <Name>iTechArt.SchoolSchedule.Foundation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\iTechArt.SchoolSchedule.Repositories\iTechArt.SchoolSchedule.Repositories\iTechArt.SchoolSchedule.Repositories.csproj">
       <Project>{CFEC3809-E667-477F-A333-7E98A5DF7E10}</Project>
       <Name>iTechArt.SchoolSchedule.Repositories</Name>
