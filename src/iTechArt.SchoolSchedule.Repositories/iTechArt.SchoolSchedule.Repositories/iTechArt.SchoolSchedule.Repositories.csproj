@@ -57,8 +57,6 @@
     <Compile Include="Configurations\PupilGroupEntityConfiguration.cs" />
     <Compile Include="Configurations\TeacherEntityConfiguration.cs" />
     <Compile Include="DbContexts\SchoolScheduleContext.cs" />
-    <Compile Include="DbContexts\SchoolScheduleContextFactory.cs" />
-    <Compile Include="Interfaces\ISchoolScheduleContextFactory.cs" />
     <Compile Include="Interfaces\ISchoolScheduleUnitOfWorkFactory.cs" />
     <Compile Include="Migrations\202002050918503_InitialCreate.cs" />
     <Compile Include="Migrations\202002050918503_InitialCreate.designer.cs">
