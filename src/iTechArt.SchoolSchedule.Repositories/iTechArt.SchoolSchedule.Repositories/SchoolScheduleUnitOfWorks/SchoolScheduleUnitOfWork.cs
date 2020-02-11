@@ -14,8 +14,8 @@ namespace iTechArt.SchoolSchedule.Repositories.SchoolScheduleUnitOfWorks
         private readonly IDictionary<Type, Type> _repositoriesMapping;
 
 
-        public SchoolScheduleUnitOfWork()
-            : base(new SchoolScheduleContext())
+        public SchoolScheduleUnitOfWork(SchoolScheduleContext context)
+            : base(context)
         {
             _repositoriesMapping = new Dictionary<Type, Type>()
             {

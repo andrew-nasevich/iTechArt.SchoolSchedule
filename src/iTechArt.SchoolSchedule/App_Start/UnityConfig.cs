@@ -18,8 +18,8 @@ namespace iTechArt.SchoolSchedule
         {
             var container = new UnityContainer();
 
-            container.RegisterType<ISchoolScheduleUnitOfWorkFactory, SchoolScheduleUnitOfWorkFactory>();
-            container.RegisterType<ISchoolScheduleInitializationService, SchoolScheduleInitializationService>(new ContainerControlledLifetimeManager());
+            container.RegisterType<ISchoolScheduleUnitOfWorkFactory, SchoolScheduleUnitOfWorkFactory>(new ContainerControlledLifetimeManager());
+            container.RegisterType<ISchoolScheduleInitializationService, SchoolScheduleInitializationService>(new PerResolveLifetimeManager());
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

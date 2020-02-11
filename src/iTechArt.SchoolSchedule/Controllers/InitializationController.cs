@@ -8,6 +8,7 @@ namespace iTechArt.SchoolSchedule.Controllers
     {
         private readonly ISchoolScheduleInitializationService _schoolScheduleInitializationService;
 
+
         public InitializationController(ISchoolScheduleInitializationService schoolScheduleInitializationService)
         {
             _schoolScheduleInitializationService = schoolScheduleInitializationService;
