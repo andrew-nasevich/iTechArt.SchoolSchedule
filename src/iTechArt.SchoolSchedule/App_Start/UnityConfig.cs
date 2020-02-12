@@ -1,11 +1,12 @@
 using System.Web.Mvc;
-using iTechArt.SchoolSchedule.Foundation.InitializationServices;
 using Unity;
-using Unity.Mvc5;
+using Unity.Lifetime;
+using Unity.AspNet.Mvc;
+using UnityDependencyResolver = Unity.Mvc5.UnityDependencyResolver;
 using iTechArt.SchoolSchedule.Foundation.Interfaces;
 using iTechArt.SchoolSchedule.Repositories.Interfaces;
 using iTechArt.SchoolSchedule.Repositories.SchoolScheduleUnitOfWorks;
-using Unity.Lifetime;
+using iTechArt.SchoolSchedule.Foundation.InitializationServices;
 
 namespace iTechArt.SchoolSchedule
 {
@@ -19,7 +20,7 @@ namespace iTechArt.SchoolSchedule
             var container = new UnityContainer();
 
             container.RegisterType<ISchoolScheduleUnitOfWorkFactory, SchoolScheduleUnitOfWorkFactory>(new ContainerControlledLifetimeManager());
-            container.RegisterType<ISchoolScheduleInitializationService, SchoolScheduleInitializationService>(new PerResolveLifetimeManager());
+            container.RegisterType<ISchoolScheduleInitializationService, SchoolScheduleInitializationService>(new PerRequestLifetimeManager());
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
