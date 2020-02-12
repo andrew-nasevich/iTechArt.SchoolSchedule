@@ -21,7 +21,7 @@ namespace iTechArt.SchoolSchedule
         private void ConfigureLogging()
         {
             LoggerContext.Current = UnityConfig.UnityContainer.Resolve<Logger>(
-                new ParameterOverride("name", "iTechArt.SchoolSchedule logger"));
+                new ParameterOverride("name", "iTechArt.SchoolSchedule"));
         }
     }
 }

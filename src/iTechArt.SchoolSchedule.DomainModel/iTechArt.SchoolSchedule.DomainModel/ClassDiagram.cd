@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="iTechArt.SchoolSchedule.DomainModel.Grades.Grade">
+    <Position X="5.5" Y="7" Width="1.5" />
+    <AssociationLine Name="Groups" Type="iTechArt.SchoolSchedule.DomainModel.Grades.Group" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.875" Y="7" />
+        <Point X="5.875" Y="3.991" />
+        <Point X="4.75" Y="3.991" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.112" Y="0.068" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Lessons" Type="iTechArt.SchoolSchedule.DomainModel.Lessons.Lesson" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.375" Y="7" />
+        <Point X="6.375" Y="4.822" />
+        <Point X="7" Y="4.822" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAEABAAAAAAAAAEAAAAAAQAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Grades\Grade.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Pupils" />
+      <Property Name="Groups" />
+      <Property Name="Lessons" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="iTechArt.SchoolSchedule.DomainModel.Grades.Group">
+    <Position X="3.25" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="iTechArt.SchoolSchedule.DomainModel.Entity" ManuallyRouted="true">
+      <Path>
+        <Point X="8.25" Y="1.062" />
+        <Point X="8.25" Y="1.465" />
+        <Point X="4" Y="1.465" />
+        <Point X="4" Y="2.75" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="Grade" Type="iTechArt.SchoolSchedule.DomainModel.Grades.Grade" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.562" Y="4.175" />
+        <Point X="4.562" Y="4.55" />
+        <Point X="5.656" Y="4.55" />
+        <Point X="5.656" Y="7" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAEAAQAAEAAAA=</HashCode>
+      <FileName>Grades\Group.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Grade" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="PupilGroups" />
+      <Property Name="Lessons" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="iTechArt.SchoolSchedule.DomainModel.Lessons.Homework">
+    <Position X="10.75" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="iTechArt.SchoolSchedule.DomainModel.Entity" ManuallyRouted="true">
+      <Path>
+        <Point X="8.25" Y="1.062" />
+        <Point X="8.25" Y="1.449" />
+        <Point X="9.422" Y="1.449" />
+        <Point X="9.422" Y="3.2" />
+        <Point X="9.917" Y="3.2" Type="JumpStart" />
+        <Point X="10.083" Y="3.2" Type="JumpEnd" />
+        <Point X="11.5" Y="3.2" />
+        <Point X="11.5" Y="3.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAEAAAAAACAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Lessons\Homework.cs</FileName>
+      <NewMemberFileName>Lessons\HomeWork.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Lesson" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="iTechArt.SchoolSchedule.DomainModel.Lessons.Lesson">
+    <Position X="7" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="iTechArt.SchoolSchedule.DomainModel.Entity" ManuallyRouted="true">
+      <Path>
+        <Point X="8.25" Y="1.062" />
+        <Point X="8.25" Y="1.419" />
+        <Point X="7.75" Y="1.419" />
+        <Point X="7.75" Y="3.5" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="Course" Type="iTechArt.SchoolSchedule.DomainModel.Lessons.Course" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.5" Y="5.125" />
+        <Point X="9.917" Y="5.125" Type="JumpStart" />
+        <Point X="10.083" Y="5.125" Type="JumpEnd" />
+        <Point X="13.031" Y="5.125" />
+        <Point X="13.031" Y="2.983" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="LessonTime" Type="iTechArt.SchoolSchedule.DomainModel.Lessons.LessonTime" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.5" Y="5.5" />
+        <Point X="9.917" Y="5.5" Type="JumpStart" />
+        <Point X="10.083" Y="5.5" Type="JumpEnd" />
+        <Point X="14.25" Y="5.5" />
+        <Point X="14.25" Y="3.175" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Classroom" Type="iTechArt.SchoolSchedule.DomainModel.Rooms.Classroom" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.312" Y="5.694" />
+        <Point X="7.312" Y="7.616" />
+        <Point X="9.25" Y="7.616" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Grade" Type="iTechArt.SchoolSchedule.DomainModel.Grades.Grade" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7" Y="5.224" />
+        <Point X="6.75" Y="5.224" />
+        <Point X="6.75" Y="7" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAFEAEAEAAAAAAAAAIEACAgCAAAAAAAAEAAAAQEAAAA=</HashCode>
+      <FileName>Lessons\Lesson.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Course" />
+      <Property Name="LessonTime" />
+      <Property Name="Teacher" />
+      <Property Name="Classroom" />
+      <Property Name="Grade" />
+      <Property Name="Group" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Homeworks" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="iTechArt.SchoolSchedule.DomainModel.People.Person">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="iTechArt.SchoolSchedule.DomainModel.Entity" FixedToPoint="true">
+      <Path>
+        <Point X="8.25" Y="1.062" />
+        <Point X="8.25" Y="1.437" />
+        <Point X="2.375" Y="1.437" />
+        <Point X="2.375" Y="4.312" />
+        <Point X="2" Y="4.312" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAQABAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>People\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iTechArt.SchoolSchedule.DomainModel.People.Pupil">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <AssociationLine Name="PupilGroups" Type="iTechArt.SchoolSchedule.DomainModel.Grades.PupilGroup" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2" Y="6.25" />
+        <Point X="2.375" Y="6.25" />
+        <Point X="2.375" Y="6.25" />
+        <Point X="3.25" Y="6.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAEAAAAAEAAAA=</HashCode>
+      <FileName>People\Pupil.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Grade" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="PupilGroups" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="iTechArt.SchoolSchedule.DomainModel.People.Teacher">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>People\Teacher.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Lessons" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="iTechArt.SchoolSchedule.DomainModel.Rooms.Classroom">
+    <Position X="9.25" Y="7" Width="1.5" />
+    <AssociationLine Name="Lessons" Type="iTechArt.SchoolSchedule.DomainModel.Lessons.Lesson" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="9.25" Y="7.188" />
+        <Point X="7.812" Y="7.188" />
+        <Point X="7.812" Y="5.694" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.808" Y="0.44" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Rooms\Classroom.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Lessons" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="iTechArt.SchoolSchedule.DomainModel.Entity" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iTechArt.SchoolSchedule.DomainModel.Grades.PupilGroup">
+    <Position X="3.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAFAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Grades\PupilGroup.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Pupil" />
+      <Property Name="Group" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="iTechArt.SchoolSchedule.DomainModel.Lessons.Course">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <AssociationLine Name="Lessons" Type="iTechArt.SchoolSchedule.DomainModel.Lessons.Lesson">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.868" Y="0.032" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Lessons\Course.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Lessons" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="iTechArt.SchoolSchedule.DomainModel.Lessons.LessonTime">
+    <Position X="13.5" Y="1.75" Width="1.5" />
+    <AssociationLine Name="Lessons" Type="iTechArt.SchoolSchedule.DomainModel.Lessons.Lesson" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.625" Y="3.175" />
+        <Point X="14.625" Y="6.069" />
+        <Point X="10.083" Y="6.069" Type="JumpStart" />
+        <Point X="9.917" Y="6.069" Type="JumpEnd" />
+        <Point X="8.312" Y="6.069" />
+        <Point X="8.312" Y="5.694" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.882" Y="0.074" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUAAAAAAA=</HashCode>
+      <FileName>Lessons\LessonTime.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Lessons" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

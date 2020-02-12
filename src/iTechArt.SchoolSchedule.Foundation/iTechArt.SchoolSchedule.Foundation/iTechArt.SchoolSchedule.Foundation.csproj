@@ -35,7 +35,28 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InitializationServices\SchoolScheduleInitializationService.cs" />
+    <Compile Include="Interfaces\ISchoolScheduleInitializationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\iTechArt.Common\iTechArt.Common\iTechArt.Common.csproj">
+      <Project>{34158c53-3f1a-49f2-aba5-8a67889a1481}</Project>
+      <Name>iTechArt.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iTechArt.Repositories\iTechArt.Repositories\iTechArt.Repositories.csproj">
+      <Project>{EF6FA8F4-97D7-4D4E-9771-91FA40CE865B}</Project>
+      <Name>iTechArt.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iTechArt.SchoolSchedule.DomainModel\iTechArt.SchoolSchedule.DomainModel\iTechArt.SchoolSchedule.DomainModel.csproj">
+      <Project>{05e833cb-5125-4223-b1a5-ad5672beb86d}</Project>
+      <Name>iTechArt.SchoolSchedule.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iTechArt.SchoolSchedule.Repositories\iTechArt.SchoolSchedule.Repositories\iTechArt.SchoolSchedule.Repositories.csproj">
+      <Project>{cfec3809-e667-477f-a333-7e98a5df7e10}</Project>
+      <Name>iTechArt.SchoolSchedule.Repositories</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
