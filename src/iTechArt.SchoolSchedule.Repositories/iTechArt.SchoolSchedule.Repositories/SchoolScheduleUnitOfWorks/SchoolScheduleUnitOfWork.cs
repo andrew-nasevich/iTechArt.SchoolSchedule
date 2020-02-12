@@ -7,7 +7,7 @@ using iTechArt.SchoolSchedule.DomainModel.People;
 using iTechArt.SchoolSchedule.Repositories.DbContexts;
 using iTechArt.SchoolSchedule.Repositories.Repositories;
 
-namespace iTechArt.SchoolSchedule.Repositories.SchoolScheduleUnitOfWork
+namespace iTechArt.SchoolSchedule.Repositories.SchoolScheduleUnitOfWorks
 {
     public class SchoolScheduleUnitOfWork : UnitOfWork<SchoolScheduleContext>
     {

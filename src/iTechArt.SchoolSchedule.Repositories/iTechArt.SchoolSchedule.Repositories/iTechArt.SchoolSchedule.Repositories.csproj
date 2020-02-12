@@ -57,6 +57,7 @@
     <Compile Include="Configurations\PupilGroupEntityConfiguration.cs" />
     <Compile Include="Configurations\TeacherEntityConfiguration.cs" />
     <Compile Include="DbContexts\SchoolScheduleContext.cs" />
+    <Compile Include="Interfaces\ISchoolScheduleUnitOfWorkFactory.cs" />
     <Compile Include="Migrations\202002050918503_InitialCreate.cs" />
     <Compile Include="Migrations\202002050918503_InitialCreate.designer.cs">
       <DependentUpon>202002050918503_InitialCreate.cs</DependentUpon>
@@ -67,7 +68,8 @@
     <Compile Include="Repositories\LessonRepository.cs" />
     <Compile Include="Repositories\PupilGroupRepository.cs" />
     <Compile Include="Repositories\PupilRepository.cs" />
-    <Compile Include="SchoolScheduleUnitOfWork\SchoolScheduleUnitOfWork.cs" />
+    <Compile Include="SchoolScheduleUnitOfWorks\SchoolScheduleUnitOfWorkFactory.cs" />
+    <Compile Include="SchoolScheduleUnitOfWorks\SchoolScheduleUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\iTechArt.Common\iTechArt.Common\iTechArt.Common.csproj">
