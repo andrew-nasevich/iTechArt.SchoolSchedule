@@ -2,8 +2,8 @@
 
 namespace iTechArt.SchoolSchedule.Repositories.IdentityModels
 {
-    public class ApplicationUser : IdentityUser
+    public class AppUser : IdentityUser
     {
-        public int Year { get; set; }
+
     }
 }

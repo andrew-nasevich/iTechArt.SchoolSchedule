@@ -6,20 +6,18 @@ using Microsoft.Owin;
 
 namespace iTechArt.SchoolSchedule.Repositories.IdentityModels.ApplicationManagers
 {
-   
-
-    public class ApplicationUserManager : UserManager<ApplicationUser>
+    public class AppUserManager : UserManager<AppUser>
     {
-        public ApplicationUserManager(IUserStore<ApplicationUser> store)
+        public AppUserManager(IUserStore<AppUser> store)
             : base(store)
         {
 
         }
 
-        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
+        public static AppUserManager Create(IdentityFactoryOptions<AppUserManager> options, IOwinContext context)
         {
             IdentityContext db = context.Get<IdentityContext>();
-            ApplicationUserManager manager = new ApplicationUserManager(new UserStore<ApplicationUser>(db));
+            AppUserManager manager = new AppUserManager(new UserStore<AppUser>(db));
 
             return manager;
         }

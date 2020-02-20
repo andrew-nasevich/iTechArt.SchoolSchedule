@@ -3,9 +3,14 @@ using iTechArt.SchoolSchedule.Repositories.IdentityModels;
 
 namespace iTechArt.SchoolSchedule.Repositories.DbContexts
 {
-    public class IdentityContext : IdentityDbContext<ApplicationUser>
+    public class IdentityContext : IdentityDbContext<AppUser>
     {
-        public IdentityContext() : base("IdentityDb") { }
+        public IdentityContext()
+            : base("IdentityDb")
+        {
+
+        }
+
 
         public static IdentityContext Create()
         {

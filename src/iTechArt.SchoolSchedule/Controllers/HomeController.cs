@@ -10,4 +10,3 @@ namespace iTechArt.SchoolSchedule.Controllers
         }
     }
 }
-
