@@ -2,15 +2,15 @@
 
 namespace iTechArt.SchoolSchedule.Repositories.IdentityModels
 {
-    public class AppRole : IdentityRole
+    public class SchoolScheduleRole : IdentityRole
     {
-        public AppRole() 
+        public SchoolScheduleRole() 
             : base()
         {
             
         }
 
-        public AppRole(string name)
+        public SchoolScheduleRole(string name)
             : base(name)
         {
             
