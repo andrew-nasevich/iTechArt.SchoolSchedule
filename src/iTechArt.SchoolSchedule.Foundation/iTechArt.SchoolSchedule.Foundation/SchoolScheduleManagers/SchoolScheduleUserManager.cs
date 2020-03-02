@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNet.Identity;
+using iTechArt.SchoolSchedule.DomainModel.Users;
+using iTechArt.SchoolSchedule.Foundation.Interfaces;
 
-namespace iTechArt.SchoolSchedule.Repositories.IdentityModels.ApplicationManagers
+namespace iTechArt.SchoolSchedule.Foundation.SchoolScheduleManagers
 {
-    public class SchoolScheduleUserManager : UserManager<SchoolScheduleUser>
+    public class SchoolScheduleUserManager : UserManager<SchoolScheduleUser>, ISchoolScheduleUserManager
     {
-        public SchoolScheduleUserManager(IUserStore<SchoolScheduleUser> store)
+        public SchoolScheduleUserManager(ISchoolScheduleUserStore<SchoolScheduleUser> store)
             : base(store)
         {
 

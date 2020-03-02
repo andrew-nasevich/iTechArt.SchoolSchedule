@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using System;
+using iTechArt.SchoolSchedule.DomainModel.Users;
+using iTechArt.SchoolSchedule.Foundation.Interfaces;
 
-namespace iTechArt.SchoolSchedule.Repositories.IdentityModels.ApplicationManagers
+namespace iTechArt.SchoolSchedule.Foundation.SchoolScheduleManagers
 {
-    public class SchoolScheduleRoleManager : RoleManager<SchoolScheduleRole>, IDisposable
+    public class SchoolScheduleRoleManager : RoleManager<SchoolScheduleRole>, ISchoolScheduleRoleManager
     {
-        public SchoolScheduleRoleManager(RoleStore<SchoolScheduleRole> store)
+        public SchoolScheduleRoleManager(ISchoolScheduleRoleStore<SchoolScheduleRole> store)
             : base(store)
         {
         

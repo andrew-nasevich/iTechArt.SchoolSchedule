@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace iTechArt.SchoolSchedule.Repositories.IdentityModels
+namespace iTechArt.SchoolSchedule.DomainModel.Users
 {
     public class SchoolScheduleUser : IdentityUser
     {

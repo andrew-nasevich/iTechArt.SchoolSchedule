@@ -3,10 +3,10 @@ using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
-using iTechArt.SchoolSchedule.Repositories.IdentityModels.ApplicationManagers;
+using iTechArt.SchoolSchedule.DomainModel.Users;
 using Microsoft.AspNet.Identity.Owin;
-using iTechArt.SchoolSchedule.Repositories.IdentityModels;
-using Microsoft.AspNet.Identity.EntityFramework;
+using iTechArt.SchoolSchedule.Foundation.SchoolScheduleManagers;
+using iTechArt.SchoolSchedule.Foundation.SchoolScheduleStores;
 
 namespace iTechArt.SchoolSchedule.App_Start
 {
@@ -16,7 +16,6 @@ namespace iTechArt.SchoolSchedule.App_Start
         {
             app.CreatePerOwinContext<SchoolScheduleAuthenticationContext>(SchoolScheduleAuthenticationContext.Create);
             app.CreatePerOwinContext<SchoolScheduleUserManager>(CreateSchoolScheduleUserManager);
-            // TODO: Why do you need it
             app.CreatePerOwinContext<SchoolScheduleRoleManager>(CreateSchoolScheduleRoleManager);
 
             app.UseCookieAuthentication(new CookieAuthenticationOptions
@@ -28,17 +27,18 @@ namespace iTechArt.SchoolSchedule.App_Start
 
         public static SchoolScheduleUserManager CreateSchoolScheduleUserManager(IdentityFactoryOptions<SchoolScheduleUserManager> options, IOwinContext context)
         {
-            SchoolScheduleAuthenticationContext db = context.Get<SchoolScheduleAuthenticationContext>();
-            SchoolScheduleUserManager manager = new SchoolScheduleUserManager(new UserStore<SchoolScheduleUser>(db));
+            var db = context.Get<SchoolScheduleAuthenticationContext>();
+            var manager = new SchoolScheduleUserManager(new SchoolScheduleUserStore<SchoolScheduleUser>(db));
 
             return manager;
         }
 
-        public static SchoolScheduleRoleManager CreateSchoolScheduleRoleManager(
-            IdentityFactoryOptions<SchoolScheduleRoleManager> options,
-            IOwinContext context)
+        public static SchoolScheduleRoleManager CreateSchoolScheduleRoleManager(IdentityFactoryOptions<SchoolScheduleRoleManager> options, IOwinContext context)
         {
-            return new SchoolScheduleRoleManager(new RoleStore<SchoolScheduleRole>(context.Get<SchoolScheduleAuthenticationContext>()));
+            var db = context.Get<SchoolScheduleAuthenticationContext>();
+            var manager = new SchoolScheduleRoleManager(new SchoolScheduleRoleStore<SchoolScheduleRole>(db));
+
+            return manager;
         }
     }
 }
