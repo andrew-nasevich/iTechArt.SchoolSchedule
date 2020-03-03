@@ -14,14 +14,14 @@ namespace iTechArt.SchoolSchedule.App_Start
     {
         public void Configuration(IAppBuilder app)
         {
-            app.CreatePerOwinContext<SchoolScheduleAuthenticationContext>(SchoolScheduleAuthenticationContext.Create);
+            app.CreatePerOwinContext(SchoolScheduleAuthenticationContext.Create);
             app.CreatePerOwinContext<SchoolScheduleUserManager>(CreateSchoolScheduleUserManager);
             app.CreatePerOwinContext<SchoolScheduleRoleManager>(CreateSchoolScheduleRoleManager);
 
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                LoginPath = new PathString("/Admin/Login"),
+                LoginPath = new PathString("/Account/Login"),
             });
         }
 
