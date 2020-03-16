@@ -2,7 +2,7 @@
 
 namespace iTechArt.SchoolSchedule.Models
 {
-    public class CreateModel
+    public class UserRegistrationModel
     {
         [Required]
         public string Email { get; set; }

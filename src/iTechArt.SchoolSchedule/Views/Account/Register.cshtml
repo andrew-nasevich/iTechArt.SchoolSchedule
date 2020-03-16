@@ -1,14 +1,16 @@
-﻿@model iTechArt.SchoolSchedule.Models.CreateModel
+﻿@model iTechArt.SchoolSchedule.Models.UserRegistrationModel
 
 @{
     ViewBag.Title = "Создание пользователя";
 }
 
+<h2>Registration</h2>
+
 @Html.ValidationSummary(false)
 @using (Html.BeginForm())
 {
     <div class="form-group">
-        <label>Имя</label>
+        <label>Name</label>
         @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
     </div>
     <div class="form-group">
@@ -17,10 +19,10 @@
     </div>
 
     <div class="form-group">
-        <label>Пароль</label>
+        <label>Password</label>
         @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
     </div>
-    <button type="submit" class="btn btn-primary">Создать</button>
+    <button type="submit" class="btn btn-primary">Register</button>
 
-    @Html.ActionLink("Отмена", "/Home/Index", null, new { @class = "btn btn-default" })
+    @Html.ActionLink("Cancel", "Login", null, new { @class = "btn btn-default" })
 }

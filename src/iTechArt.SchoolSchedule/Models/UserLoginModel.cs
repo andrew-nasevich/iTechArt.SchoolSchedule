@@ -2,7 +2,7 @@
 
 namespace iTechArt.SchoolSchedule.Models
 {
-    public class LoginViewModel
+    public class UserLoginModel
     {
         [Required]
         public string Name { get; set; }

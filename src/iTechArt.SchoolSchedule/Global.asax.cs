@@ -2,6 +2,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using iTechArt.Common.Logging;
+using iTechArt.SchoolSchedule.App_Start;
 using Unity;
 using Unity.Resolution;
 

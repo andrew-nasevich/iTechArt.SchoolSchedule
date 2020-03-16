@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity;
 using iTechArt.SchoolSchedule.DomainModel.Users;
 using iTechArt.SchoolSchedule.Foundation.Interfaces;
+using iTechArt.SchoolSchedule.Repositories.Interfaces;
 
 namespace iTechArt.SchoolSchedule.Foundation.SchoolScheduleManagers
 {

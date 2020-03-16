@@ -10,11 +10,5 @@ namespace iTechArt.SchoolSchedule.Repositories.DbContexts
         {
 
         }
-
-
-        public static SchoolScheduleAuthenticationContext Create()
-        {
-            return new SchoolScheduleAuthenticationContext();
-        }
     }
 }

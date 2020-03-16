@@ -59,7 +59,9 @@
     <Compile Include="Configurations\TeacherEntityConfiguration.cs" />
     <Compile Include="DbContexts\SchoolScheduleAuthenticationContext.cs" />
     <Compile Include="DbContexts\SchoolScheduleContext.cs" />
+    <Compile Include="Interfaces\ISchoolScheduleRoleStore.cs" />
     <Compile Include="Interfaces\ISchoolScheduleUnitOfWorkFactory.cs" />
+    <Compile Include="Interfaces\ISchoolScheduleUserStore.cs" />
     <Compile Include="Migrations\202002050918503_InitialCreate.cs" />
     <Compile Include="Migrations\202002050918503_InitialCreate.designer.cs">
       <DependentUpon>202002050918503_InitialCreate.cs</DependentUpon>
@@ -70,14 +72,12 @@
     <Compile Include="Repositories\LessonRepository.cs" />
     <Compile Include="Repositories\PupilGroupRepository.cs" />
     <Compile Include="Repositories\PupilRepository.cs" />
+    <Compile Include="SchoolScheduleStores\SchoolScheduleRoleStore.cs" />
+    <Compile Include="SchoolScheduleStores\SchoolScheduleUserStore.cs" />
     <Compile Include="SchoolScheduleUnitOfWorks\SchoolScheduleUnitOfWorkFactory.cs" />
     <Compile Include="SchoolScheduleUnitOfWorks\SchoolScheduleUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\iTechArt.Common\iTechArt.Common\iTechArt.Common.csproj">
-      <Project>{34158c53-3f1a-49f2-aba5-8a67889a1481}</Project>
-      <Name>iTechArt.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\iTechArt.Repositories\iTechArt.Repositories\iTechArt.Repositories.csproj">
       <Project>{ef6fa8f4-97d7-4d4e-9771-91fa40ce865b}</Project>
       <Name>iTechArt.Repositories</Name>

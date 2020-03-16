@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace iTechArt.SchoolSchedule
+namespace iTechArt.SchoolSchedule.App_Start
 {
     public class RouteConfig
     {

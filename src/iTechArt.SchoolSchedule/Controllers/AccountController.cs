@@ -1,22 +1,25 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity.Owin;
 using System.Web;
 using iTechArt.SchoolSchedule.Models;
 using iTechArt.SchoolSchedule.DomainModel.Users;
-using iTechArt.SchoolSchedule.Foundation.SchoolScheduleManagers;
 using iTechArt.SchoolSchedule.Foundation.Interfaces;
 
 namespace iTechArt.SchoolSchedule.Controllers
 {
     public class AccountController : Controller
     {
+        private readonly ISchoolScheduleUserManager _userManager;
+
         private IAuthenticationManager AuthManager => HttpContext.GetOwinContext().Authentication;
 
-        private ISchoolScheduleUserManager UserManager => HttpContext.GetOwinContext().GetUserManager<SchoolScheduleUserManager>();
+
+        public AccountController(ISchoolScheduleUserManager userManager)
+        { 
+            _userManager = userManager;
+        }
 
 
         public ActionResult Login()
@@ -24,10 +27,22 @@ namespace iTechArt.SchoolSchedule.Controllers
             return View();
         }
 
-        [HttpPost]
-        public async Task<ActionResult> Login(LoginViewModel details)
+        public ActionResult Register()
         {
-            SchoolScheduleUser user = await UserManager.FindAsync(details.Name, details.Password);
+            return View();
+        }
+
+        public ActionResult Logout()
+        {
+            AuthManager.SignOut();
+
+            return Redirect("/Account/Login");
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Login(UserLoginModel details)
+        {
+            var user = await _userManager.FindAsync(details.Name, details.Password);
 
             if (user == null)
             {
@@ -35,14 +50,10 @@ namespace iTechArt.SchoolSchedule.Controllers
             }
             else
             {
-                ClaimsIdentity ident = await UserManager.CreateIdentityAsync(user,
-                    DefaultAuthenticationTypes.ApplicationCookie);
+                var ident = await _userManager.CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);
 
                 AuthManager.SignOut();
-                AuthManager.SignIn(new AuthenticationProperties
-                {
-                    IsPersistent = false
-                }, ident);
+                AuthManager.SignIn(new AuthenticationProperties { IsPersistent = false }, ident);
 
                 return Redirect("/Home/Index");
             }
@@ -50,37 +61,25 @@ namespace iTechArt.SchoolSchedule.Controllers
             return View(details);
         }
 
-        public ActionResult Register()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public async Task<ActionResult> Register(CreateModel model)
+        public async Task<ActionResult> Register(UserRegistrationModel model)
         {
             if (ModelState.IsValid)
             {
-                SchoolScheduleUser user = new SchoolScheduleUser { UserName = model.Name, Email = model.Email };
-                IdentityResult result =
-                    await UserManager.CreateAsync(user, model.Password);
+                var user = new SchoolScheduleUser { UserName = model.Name, Email = model.Email };
+                var result = await _userManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
                 {
                     return Redirect("/Home/Index");
                 }
-                else
-                {
-                    AddErrorsFromResult(result);
-                }
+
+                AddErrorsFromResult(result);
             }
+
             return View(model);
         }
 
-        public async Task<ActionResult> Logout()
-        {
-            AuthManager.SignOut();
-            return Redirect("/Account/Login");
-        }
 
         private void AddErrorsFromResult(IdentityResult result)
         {
