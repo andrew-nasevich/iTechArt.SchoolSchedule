@@ -46,7 +46,7 @@ namespace iTechArt.SchoolSchedule.Controllers
 
             if (user == null)
             {
-                ModelState.AddModelError("", "Некорректное имя или пароль.");
+                ModelState.AddModelError("", "Invalid Name or Password.");
             }
             else
             {
@@ -71,6 +71,11 @@ namespace iTechArt.SchoolSchedule.Controllers
 
                 if (result.Succeeded)
                 {
+                    var ident = await _userManager.CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);
+
+                    AuthManager.SignOut();
+                    AuthManager.SignIn(new AuthenticationProperties { IsPersistent = false }, ident);
+
                     return Redirect("/Home/Index");
                 }
 

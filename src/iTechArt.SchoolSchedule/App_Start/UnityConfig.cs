@@ -24,9 +24,9 @@ namespace iTechArt.SchoolSchedule.App_Start
 
             container.RegisterType<ISchoolScheduleUnitOfWorkFactory, SchoolScheduleUnitOfWorkFactory>(new ContainerControlledLifetimeManager());
             container.RegisterType<ISchoolScheduleInitializationService, SchoolScheduleInitializationService>(new PerRequestLifetimeManager());
-            container.RegisterType<ISchoolScheduleUserStore<SchoolScheduleUser>, SchoolScheduleUserStore<SchoolScheduleUser>>(new TransientLifetimeManager());
-            container.RegisterType<ISchoolScheduleUserManager, SchoolScheduleUserManager>(new TransientLifetimeManager());
-            container.RegisterType<ISchoolScheduleRoleStore<SchoolScheduleRole>, SchoolScheduleRoleStore<SchoolScheduleRole>>(new TransientLifetimeManager());
+            container.RegisterType<ISchoolScheduleUserStore<SchoolScheduleUser>, SchoolScheduleUserStore<SchoolScheduleUser>>(new PerRequestLifetimeManager());
+            container.RegisterType<ISchoolScheduleUserManager, SchoolScheduleUserManager>(new PerRequestLifetimeManager());
+            container.RegisterType<ISchoolScheduleRoleStore<SchoolScheduleRole>, SchoolScheduleRoleStore<SchoolScheduleRole>>(new PerRequestLifetimeManager());
             container.RegisterType<ISchoolScheduleRoleManager, SchoolScheduleRoleManager>(new PerRequestLifetimeManager());
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
