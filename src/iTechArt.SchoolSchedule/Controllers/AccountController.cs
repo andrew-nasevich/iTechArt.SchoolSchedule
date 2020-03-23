@@ -12,13 +12,13 @@ namespace iTechArt.SchoolSchedule.Controllers
     public class AccountController : Controller
     {
         private readonly ISchoolScheduleUserManager _userManager;
+        private readonly IAuthenticationManager _authManager;
 
-        private IAuthenticationManager AuthManager => HttpContext.GetOwinContext().Authentication;
 
-
-        public AccountController(ISchoolScheduleUserManager userManager)
+        public AccountController(ISchoolScheduleUserManager userManager, IAuthenticationManager authManager)
         { 
             _userManager = userManager;
+            _authManager = authManager;
         }
 
 
@@ -34,7 +34,7 @@ namespace iTechArt.SchoolSchedule.Controllers
 
         public ActionResult Logout()
         {
-            AuthManager.SignOut();
+            _authManager.SignOut();
 
             return Redirect("/Account/Login");
         }
@@ -52,8 +52,8 @@ namespace iTechArt.SchoolSchedule.Controllers
             {
                 var ident = await _userManager.CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);
 
-                AuthManager.SignOut();
-                AuthManager.SignIn(new AuthenticationProperties { IsPersistent = false }, ident);
+                _authManager.SignOut();
+                _authManager.SignIn(new AuthenticationProperties { IsPersistent = false }, ident);
 
                 return Redirect("/Home/Index");
             }
@@ -73,8 +73,8 @@ namespace iTechArt.SchoolSchedule.Controllers
                 {
                     var ident = await _userManager.CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);
 
-                    AuthManager.SignOut();
-                    AuthManager.SignIn(new AuthenticationProperties { IsPersistent = false }, ident);
+                    _authManager.SignOut();
+                    _authManager.SignIn(new AuthenticationProperties { IsPersistent = false }, ident);
 
                     return Redirect("/Home/Index");
                 }

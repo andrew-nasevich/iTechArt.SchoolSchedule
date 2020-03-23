@@ -20,16 +20,14 @@ namespace iTechArt.SchoolSchedule.App_Start
 
         public static void RegisterComponents()
         {
-            var container = new UnityContainer();
+            UnityContainer.RegisterType<ISchoolScheduleUnitOfWorkFactory, SchoolScheduleUnitOfWorkFactory>(new ContainerControlledLifetimeManager());
+            UnityContainer.RegisterType<ISchoolScheduleInitializationService, SchoolScheduleInitializationService>(new PerRequestLifetimeManager());
+            UnityContainer.RegisterType<ISchoolScheduleUserStore<SchoolScheduleUser>, SchoolScheduleUserStore<SchoolScheduleUser>>(new PerRequestLifetimeManager());
+            UnityContainer.RegisterType<ISchoolScheduleUserManager, SchoolScheduleUserManager>(new PerRequestLifetimeManager());
+            UnityContainer.RegisterType<ISchoolScheduleRoleStore<SchoolScheduleRole>, SchoolScheduleRoleStore<SchoolScheduleRole>>(new PerRequestLifetimeManager());
+            UnityContainer.RegisterType<ISchoolScheduleRoleManager, SchoolScheduleRoleManager>(new PerRequestLifetimeManager());
 
-            container.RegisterType<ISchoolScheduleUnitOfWorkFactory, SchoolScheduleUnitOfWorkFactory>(new ContainerControlledLifetimeManager());
-            container.RegisterType<ISchoolScheduleInitializationService, SchoolScheduleInitializationService>(new PerRequestLifetimeManager());
-            container.RegisterType<ISchoolScheduleUserStore<SchoolScheduleUser>, SchoolScheduleUserStore<SchoolScheduleUser>>(new PerRequestLifetimeManager());
-            container.RegisterType<ISchoolScheduleUserManager, SchoolScheduleUserManager>(new PerRequestLifetimeManager());
-            container.RegisterType<ISchoolScheduleRoleStore<SchoolScheduleRole>, SchoolScheduleRoleStore<SchoolScheduleRole>>(new PerRequestLifetimeManager());
-            container.RegisterType<ISchoolScheduleRoleManager, SchoolScheduleRoleManager>(new PerRequestLifetimeManager());
-
-            DependencyResolver.SetResolver(new UnityDependencyResolver(container));
+            DependencyResolver.SetResolver(new UnityDependencyResolver(UnityContainer));
         }
     }
 }
